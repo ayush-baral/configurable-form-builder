@@ -1,17 +1,15 @@
-import { FieldRenderer } from "./components/FieldRenderer";
-import { useFormConfig } from "./context/FormConfigContext";
+import { FormPreview } from "./components/FormPreview";
+import { SchemaBuilder } from "./components/SchemaBuilder";
 import styles from "./App.module.css";
 
 function App() {
-  const { fields } = useFormConfig();
-
   return (
-    <section className={styles.preview}>
-      <h1 className={styles.title}>Form Preview</h1>
-      {fields.map((field) => (
-        <FieldRenderer key={field.id} field={field} />
-      ))}
-    </section>
+    <div className={styles.layout}>
+      <SchemaBuilder />
+      <div className={styles.previewPane}>
+        <FormPreview />
+      </div>
+    </div>
   );
 }
 
