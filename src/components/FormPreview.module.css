@@ -30,3 +30,9 @@
   font: inherit;
   cursor: pointer;
 }
+
+.success {
+  margin: 0;
+  color: #17663a;
+  font-size: 0.9rem;
+}

@@ -1,46 +1,34 @@
 import type { Field } from "../types/form";
+import type { FormErrors, FormValues } from "../utils/validate";
+import { Input } from "./Input";
 import styles from "./FieldRenderer.module.css";
 
 type FieldRendererProps = {
   field: Field;
+  values: FormValues;
+  errors: FormErrors;
+  onValueChange: (id: string, value: string) => void;
 };
 
-export function FieldRenderer({ field }: FieldRendererProps) {
+export function FieldRenderer({
+  field,
+  values,
+  errors,
+  onValueChange,
+}: FieldRendererProps) {
   switch (field.type) {
     case "text":
-      return (
-        <label className={styles.field} htmlFor={field.id}>
-          <span className={styles.label}>
-            {field.label}
-            {field.required ? <span aria-hidden="true"> *</span> : null}
-          </span>
-          <input
-            className={styles.input}
-            id={field.id}
-            name={field.id}
-            type="text"
-            required={field.required}
-          />
-        </label>
-      );
-
     case "number":
       return (
-        <label className={styles.field} htmlFor={field.id}>
-          <span className={styles.label}>
-            {field.label}
-            {field.required ? <span aria-hidden="true"> *</span> : null}
-          </span>
-          <input
-            className={styles.input}
-            id={field.id}
-            name={field.id}
-            type="number"
-            required={field.required}
-            min={field.min}
-            max={field.max}
-          />
-        </label>
+        <Input
+          id={field.id}
+          label={field.label}
+          required={field.required}
+          value={values[field.id] ?? ""}
+          error={errors[field.id]}
+          inputMode={field.type === "number" ? "decimal" : undefined}
+          onChange={(value) => onValueChange(field.id, value)}
+        />
       );
 
     case "group":
@@ -48,7 +36,13 @@ export function FieldRenderer({ field }: FieldRendererProps) {
         <fieldset className={styles.group}>
           <legend className={styles.groupLabel}>{field.label}</legend>
           {field.children.map((child) => (
-            <FieldRenderer key={child.id} field={child} />
+            <FieldRenderer
+              key={child.id}
+              field={child}
+              values={values}
+              errors={errors}
+              onValueChange={onValueChange}
+            />
           ))}
         </fieldset>
       );
