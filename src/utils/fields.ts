@@ -1,7 +1,7 @@
 import type { Field, FieldType, FormConfiguration } from "../types/form";
 
 export function createField(type: FieldType): Field {
-  const id = new Date().getTime().toString();
+  const id = crypto.randomUUID();
 
   switch (type) {
     case "text":

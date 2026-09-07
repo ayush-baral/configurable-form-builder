@@ -10,7 +10,7 @@ import { SchemaFieldItem } from "./SchemaFieldItem";
 import styles from "./SchemaBuilder.module.css";
 
 export function SchemaBuilder() {
-  const { fields, setFields } = useFormConfig();
+  const { fields, setFields, resetPreview } = useFormConfig();
   const [exportOpen, setExportOpen] = useState(false);
   const [importOpen, setImportOpen] = useState(false);
 
@@ -62,7 +62,10 @@ export function SchemaBuilder() {
       <ImportModal
         open={importOpen}
         onClose={() => setImportOpen(false)}
-        onImport={setFields}
+        onImport={(nextFields) => {
+          setFields(nextFields);
+          resetPreview();
+        }}
       />
     </section>
   );

@@ -4,6 +4,8 @@ import type { FormConfiguration } from "../types/form";
 export type FormConfigContextValue = {
   fields: FormConfiguration;
   setFields: Dispatch<SetStateAction<FormConfiguration>>;
+  previewResetKey: number;
+  resetPreview: () => void;
 };
 
 export const FormConfigContext = createContext<FormConfigContextValue | null>(

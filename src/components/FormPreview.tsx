@@ -1,7 +1,11 @@
 import { useState, type SubmitEvent } from "react";
 import { FieldRenderer } from "./FieldRenderer";
 import { useFormConfig } from "../context/FormConfigContext";
-import { validateForm, type FormErrors, type FormValues } from "../utils/validate";
+import {
+  validateForm,
+  type FormErrors,
+  type FormValues,
+} from "../utils/validate";
 import styles from "./FormPreview.module.css";
 
 export function FormPreview() {
