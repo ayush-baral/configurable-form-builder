@@ -3,15 +3,16 @@ export type FieldType = "text" | "number" | "group";
 type FieldBase = {
   id: string;
   label: string;
-  required: boolean;
 };
 
 export type TextField = FieldBase & {
   type: "text";
+  required: boolean;
 };
 
 export type NumberField = FieldBase & {
   type: "number";
+  required: boolean;
   min?: number;
   max?: number;
 };

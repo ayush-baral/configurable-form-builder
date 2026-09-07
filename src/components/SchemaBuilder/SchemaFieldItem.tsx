@@ -100,10 +100,13 @@ export function SchemaFieldItem({
               onChange={(event) => {
                 const required = event.target.checked;
                 setFields((current) =>
-                  updateField(current, field.id, (currentField) => ({
-                    ...currentField,
-                    required,
-                  })),
+                  updateField(current, field.id, (currentField) => {
+                    if (currentField.type === "group") {
+                      return currentField;
+                    }
+
+                    return { ...currentField, required };
+                  }),
                 );
               }}
             />

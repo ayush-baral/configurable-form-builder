@@ -23,7 +23,6 @@ export function createField(type: FieldType): Field {
         id,
         type,
         label: "Group",
-        required: false,
         children: [],
       };
   }

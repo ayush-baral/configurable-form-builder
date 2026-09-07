@@ -19,7 +19,6 @@ export const initialFields: FormConfiguration = [
     id: "personal",
     type: "group",
     label: "Personal Information",
-    required: false,
     children: [
       {
         id: "email",
@@ -31,7 +30,6 @@ export const initialFields: FormConfiguration = [
         id: "address",
         type: "group",
         label: "Address",
-        required: false,
         children: [
           {
             id: "city",
