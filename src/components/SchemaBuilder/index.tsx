@@ -5,12 +5,14 @@ import { stringifyConfig } from "../../utils/configJson";
 import { addField, createField } from "../../utils/fields";
 import { AddFieldButtons } from "./AddFieldButtons";
 import { ExportModal } from "./ExportModal";
+import { ImportModal } from "./ImportModal";
 import { SchemaFieldItem } from "./SchemaFieldItem";
 import styles from "./SchemaBuilder.module.css";
 
 export function SchemaBuilder() {
   const { fields, setFields } = useFormConfig();
   const [exportOpen, setExportOpen] = useState(false);
+  const [importOpen, setImportOpen] = useState(false);
 
   function handleAddRoot(type: FieldType) {
     setFields((current) => addField(current, null, createField(type)));
@@ -20,9 +22,14 @@ export function SchemaBuilder() {
     <section className={styles.builder}>
       <div className={styles.headerRow}>
         <h1 className={styles.title}>Form Builder</h1>
-        <button type="button" onClick={() => setExportOpen(true)}>
-          Export JSON
-        </button>
+        <div className={styles.headerActions}>
+          <button type="button" onClick={() => setImportOpen(true)}>
+            Import JSON
+          </button>
+          <button type="button" onClick={() => setExportOpen(true)}>
+            Export JSON
+          </button>
+        </div>
       </div>
       <p className={styles.hint}>
         Please update the schema on left to see the preview on right.
@@ -51,6 +58,11 @@ export function SchemaBuilder() {
         open={exportOpen}
         json={stringifyConfig(fields)}
         onClose={() => setExportOpen(false)}
+      />
+      <ImportModal
+        open={importOpen}
+        onClose={() => setImportOpen(false)}
+        onImport={setFields}
       />
     </section>
   );
