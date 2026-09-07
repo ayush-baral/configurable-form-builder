@@ -12,6 +12,23 @@
   font-size: 1.25rem;
 }
 
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.headerRow button {
+  padding: 0.3rem 0.55rem;
+  border: 1px solid #c5c9d1;
+  border-radius: 4px;
+  background: #f6f7f9;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
 .hint,
 .empty {
   margin: 0;

@@ -1,0 +1,28 @@
+.json {
+  display: block;
+  width: 100%;
+  min-height: 16rem;
+  padding: 0.65rem;
+  border: 1px solid #c5c9d1;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.actions button {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #c5c9d1;
+  border-radius: 4px;
+  background: #f6f7f9;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
