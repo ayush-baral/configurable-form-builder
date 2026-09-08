@@ -3,20 +3,20 @@ import styles from "./Input.module.css";
 type InputProps = {
   id: string;
   label: string;
+  type?: "text" | "number";
   required?: boolean;
   value: string;
   error?: string;
-  inputMode?: "decimal";
   onChange: (value: string) => void;
 };
 
 export function Input({
   id,
   label,
+  type = "text",
   required = false,
   value,
   error,
-  inputMode,
   onChange,
 }: InputProps) {
   const errorId = `${id}-error`;
@@ -31,8 +31,7 @@ export function Input({
         className={`${styles.input} ${error ? styles.invalid : ""}`}
         id={id}
         name={id}
-        type="text"
-        inputMode={inputMode}
+        type={type}
         value={value}
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? errorId : undefined}

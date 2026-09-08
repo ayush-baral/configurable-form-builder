@@ -23,10 +23,10 @@ export function FieldRenderer({
         <Input
           id={field.id}
           label={field.label}
+          type={field.type}
           required={field.required}
           value={values[field.id] ?? ""}
           error={errors[field.id]}
-          inputMode={field.type === "number" ? "decimal" : undefined}
           onChange={(value) => onValueChange(field.id, value)}
         />
       );
