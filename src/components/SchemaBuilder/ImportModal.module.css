@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 12rem;
   padding: 0.65rem;
-  border: 1px solid #c5c9d1;
+  border: 1px solid var(--border);
   border-radius: 4px;
   box-sizing: border-box;
   font-family: ui-monospace, monospace;
@@ -13,7 +13,7 @@
 
 .hint {
   margin: 0;
-  color: #5c6370;
+  color: var(--muted);
   font-size: 0.85rem;
 }
 
@@ -30,26 +30,29 @@
   max-height: 10rem;
   overflow: auto;
   padding: 0.65rem;
-  border: 1px solid #e4e7ec;
+  border: 1px solid var(--border-subtle);
   border-radius: 4px;
-  background: #f6f7f9;
+  background: var(--bg);
   font-family: ui-monospace, monospace;
   font-size: 0.75rem;
 }
 
 .example button {
   padding: 0.3rem 0.55rem;
-  border: 1px solid #c5c9d1;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  background: #f6f7f9;
-  font: inherit;
+  background: var(--bg);
   font-size: 0.85rem;
   cursor: pointer;
 }
 
+.example button:hover {
+  background: var(--bg-hover);
+}
+
 .error {
   margin: 0;
-  color: #b42318;
+  color: var(--danger);
   font-size: 0.85rem;
 }
 
@@ -61,10 +64,13 @@
 
 .actions button {
   padding: 0.35rem 0.7rem;
-  border: 1px solid #c5c9d1;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  background: #f6f7f9;
-  font: inherit;
+  background: var(--bg);
   font-size: 0.85rem;
   cursor: pointer;
+}
+
+.actions button:hover {
+  background: var(--bg-hover);
 }

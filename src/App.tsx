@@ -8,7 +8,9 @@ function App() {
 
   return (
     <div className={styles.layout}>
-      <SchemaBuilder />
+      <div className={styles.builderPane}>
+        <SchemaBuilder />
+      </div>
       <div className={styles.previewPane}>
         <FormPreview key={previewResetKey} />
       </div>

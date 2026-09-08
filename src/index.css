@@ -1,0 +1,53 @@
+:root {
+  --font: system-ui, sans-serif;
+  --text: #1f2430;
+  --muted: #5c6370;
+  --border: #c5c9d1;
+  --border-subtle: #d8dce3;
+  --bg: #f6f7f9;
+  --bg-hover: #e9ebef;
+  --bg-card: #fff;
+  --primary: #2f3540;
+  --primary-hover: #232830;
+  --danger: #b42318;
+  --danger-bg: #fef3f2;
+  --danger-border: #e8b4b0;
+  --success: #17663a;
+  --focus: #3d5a80;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg-card);
+  line-height: 1.45;
+}
+
+h1,
+h2,
+h3 {
+  font-family: inherit;
+  font-weight: 650;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}

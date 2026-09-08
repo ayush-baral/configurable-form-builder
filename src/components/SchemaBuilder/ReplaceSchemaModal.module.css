@@ -16,16 +16,24 @@
 
 .actions button {
   padding: 0.35rem 0.7rem;
-  border: 1px solid #c5c9d1;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  background: #f6f7f9;
-  font: inherit;
+  background: var(--bg);
   font-size: 0.85rem;
   cursor: pointer;
 }
 
+.actions button:hover {
+  background: var(--bg-hover);
+}
+
 .actions .danger {
-  background: #b42318;
-  border-color: #b42318;
+  background: var(--danger);
+  border-color: var(--danger);
   color: #fff;
+}
+
+.actions .danger:hover {
+  background: #931b12;
+  border-color: #931b12;
 }

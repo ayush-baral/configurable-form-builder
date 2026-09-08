@@ -28,7 +28,7 @@ export function Input({
         {required ? <span aria-hidden="true"> *</span> : null}
       </span>
       <input
-        className={error ? `${styles.input} ${styles.invalid}` : styles.input}
+        className={`${styles.input} ${error ? styles.invalid : ""}`}
         id={id}
         name={id}
         type="text"

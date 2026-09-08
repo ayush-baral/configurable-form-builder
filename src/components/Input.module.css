@@ -11,15 +11,15 @@
 
 .input {
   padding: 0.5rem 0.65rem;
-  border: 1px solid #c5c9d1;
+  border: 1px solid var(--border);
   border-radius: 4px;
 }
 
 .invalid {
-  border-color: #b42318;
+  border-color: var(--danger);
 }
 
 .error {
-  color: #b42318;
+  color: var(--danger);
   font-size: 0.8rem;
 }

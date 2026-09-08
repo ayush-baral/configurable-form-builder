@@ -29,9 +29,11 @@ export function SchemaFieldItem({
 
   return (
     <li className={styles.item}>
-      <div className={styles.card}>
+      <div
+        className={`${styles.card} ${field.type === "group" ? styles.cardGroup : ""}`}
+      >
         <div className={styles.cardHeader}>
-          <span className={styles.type}>
+          <span className={`${styles.type} ${styles[field.type]}`}>
             {field.type}
             {field.type === "group" ? ` · ${field.label}` : null}
           </span>
@@ -57,6 +59,7 @@ export function SchemaFieldItem({
               Down
             </button>
             <button
+              className={styles.delete}
               type="button"
               aria-label={`Delete ${field.label}`}
               onClick={() =>
