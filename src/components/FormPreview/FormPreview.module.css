@@ -1,0 +1,59 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.empty {
+  color: var(--muted);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.submit,
+.reset {
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+.submit:hover {
+  background: var(--primary-hover);
+}
+
+.reset {
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.reset:hover {
+  background: var(--bg-hover);
+}
+
+.success {
+  margin: 0;
+  color: var(--success);
+  font-size: 0.9rem;
+}
