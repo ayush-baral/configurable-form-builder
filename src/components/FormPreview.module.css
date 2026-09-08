@@ -20,18 +20,36 @@
   gap: 1rem;
 }
 
-.submit {
-  align-self: flex-start;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.submit,
+.reset {
   padding: 0.5rem 0.9rem;
-  border: 1px solid var(--primary);
   border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit {
+  border: 1px solid var(--primary);
   background: var(--primary);
   color: #fff;
-  cursor: pointer;
 }
 
 .submit:hover {
   background: var(--primary-hover);
+}
+
+.reset {
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.reset:hover {
+  background: var(--bg-hover);
 }
 
 .success {

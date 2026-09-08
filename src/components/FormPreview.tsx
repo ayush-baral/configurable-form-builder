@@ -36,6 +36,12 @@ export function FormPreview() {
     setSubmitted(Object.keys(nextErrors).length === 0);
   }
 
+  function handleReset() {
+    setValues({});
+    setErrors({});
+    setSubmitted(false);
+  }
+
   return (
     <section className={styles.preview}>
       <h1 className={styles.title}>Form Preview</h1>
@@ -54,9 +60,14 @@ export function FormPreview() {
               onValueChange={handleValueChange}
             />
           ))}
-          <button className={styles.submit} type="submit">
-            Submit
-          </button>
+          <div className={styles.actions}>
+            <button className={styles.submit} type="submit">
+              Submit
+            </button>
+            <button className={styles.reset} type="button" onClick={handleReset}>
+              Reset
+            </button>
+          </div>
           {submitted ? (
             <p className={styles.success} role="status">
               Form submitted successfully.
